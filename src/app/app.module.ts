@@ -11,6 +11,7 @@ import { BoxesContainerComponent } from './boxes-container/boxes-container.compo
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { BackButtonComponent } from './back-button/back-button.component';
 import { HideonrouteDirective } from './directives/hideonroute.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HideonrouteDirective } from './directives/hideonroute.directive';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

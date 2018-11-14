@@ -11,7 +11,7 @@ export class HideonrouteDirective {
 
   constructor(el: ElementRef, private router: Router) {
     router.events.pipe(filter(e => e instanceof ResolveEnd)).subscribe((e: ResolveEnd) => {
-    if (e.url === this.appHideonroute) {
+      if (e.urlAfterRedirects === this.appHideonroute) {
         el.nativeElement.style.display = 'none';
       } else {
         el.nativeElement.style.display = null;

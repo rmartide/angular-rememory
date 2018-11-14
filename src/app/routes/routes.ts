@@ -5,5 +5,6 @@ import { Routes } from '@angular/router';
 export const appRoutes: Routes = [
     { path: 'boxes', component: BoxesContainerComponent },
     { path: 'rxjs', component: RxjsComponent },
-    { path: '', redirectTo: '/boxes', pathMatch: 'full' }
+    { path: '', redirectTo: '/boxes', pathMatch: 'full' },
+    { path: '**', redirectTo: '/boxes' }
 ];
