@@ -15,7 +15,7 @@ export class RxjsComponent implements OnInit {
   input$: Subject<String> = new Subject();
   searchItems: YoutubeItem[];
   typed = '';
-  keys: { APIKEY: string, CLIENT_ID: string } = JSON['default'];
+  keys: { API_KEY: string, CLIENT_ID: string } = JSON['default'];
   url = 'https://www.googleapis.com/youtube/v3/search';
 
   ngOnInit() {
@@ -39,7 +39,7 @@ export class RxjsComponent implements OnInit {
         params: {
           part: 'snippet',
           q: value,
-          key: this.keys.APIKEY,
+          key: this.keys.API_KEY,
           maxResults: '12'
         }
       }
