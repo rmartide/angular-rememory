@@ -1,4 +1,6 @@
 <div class="container-fluid">
     <input type="text" placeholder="write to search" (keyup)="handleChange($event)">
-    typed: {{typed}}
+    <div *ngFor="let searchItem of searchItems">
+        
+    </div>
 </div>
