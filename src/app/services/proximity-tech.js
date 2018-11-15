@@ -91,8 +91,7 @@ const lineEq = (y2, y1, x2, x1, currentVal) => {
     return m * currentVal + b;
 };
 
-const exec = () => {
-    const items = Array.from(document.querySelectorAll('.search-item'));
+const exec = (elRef) => {
     const distanceThreshold = {
         min: 0,
         max: 150
@@ -110,25 +109,23 @@ const exec = () => {
         to: 450
     };
 
-    items.forEach(item => {
-        const img = item.querySelector('img');
-        const h2 = item.querySelector('span');
-        new Nearby(img, {
-            onProgress: distance => {
-                const o = lineEq(opacityInterval.from, opacityInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
-                const br = lineEq(borderRadiusInterval.from, borderRadiusInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
-                const t = lineEq(translateInterval.from, translateInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
-                TweenMax.to(img, 1, {
-                    ease: Power2.easeOut,
-                    borderRadius: Math.max(Math.min(br, borderRadiusInterval.from), 0),
-                    opacity: Math.max(Math.min(o, opacityInterval.to), .5)
-                });
-                /* TweenMax.to(h2, 1, {
-                    ease: Power2.easeOut,
-                    yPercent: Math.max(Math.min(t, translateInterval.to), 0)
-                }); */
-            }
-        });
+    const img = elRef.querySelector('img');
+    const h2 = elRef.querySelector('span');
+    new Nearby(img, {
+        onProgress: distance => {
+            const o = lineEq(opacityInterval.from, opacityInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
+            const br = lineEq(borderRadiusInterval.from, borderRadiusInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
+            const t = lineEq(translateInterval.from, translateInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
+            TweenMax.to(img, 1, {
+                ease: Power2.easeOut,
+                borderRadius: Math.max(Math.min(br, borderRadiusInterval.from), 0),
+                opacity: Math.max(Math.min(o, opacityInterval.to), .5)
+            });
+            /* TweenMax.to(h2, 1, {
+                ease: Power2.easeOut,
+                yPercent: Math.max(Math.min(t, translateInterval.to), 0)
+            }); */
+        }
     });
 }
 

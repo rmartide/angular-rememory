@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, OnDestroy } from '@angular/core';
 import { YoutubeItem } from '../youtube-search';
 import ProxyTech from '@services/proximity-tech.js';
 
@@ -7,13 +7,17 @@ import ProxyTech from '@services/proximity-tech.js';
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.scss']
 })
-export class SearchItemComponent implements OnInit {
+export class SearchItemComponent implements OnInit, OnDestroy {
 
   @Input() searchItem: YoutubeItem;
 
-  constructor() { }
+  constructor(private elRef: ElementRef) { }
 
   ngOnInit() {
+    ProxyTech.exec(this.elRef.nativeElement);
   }
 
+  ngOnDestroy(): void {
+    //REMOVE EVENTLISTENER
+  }
 }

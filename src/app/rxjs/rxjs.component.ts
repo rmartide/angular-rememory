@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { YoutubeItem } from './youtube-search';
 import { YoutubeSearchService } from '@app/services/youtube-search.service';
 
