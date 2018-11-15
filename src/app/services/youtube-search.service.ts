@@ -29,17 +29,7 @@ export class YoutubeSearchService {
   search(value): void {
     this.input$.next(value);
   }
-/* 
   
-  search(value): void {
-    const obs = of(value).pipe(
-      debounceTime(300),
-      filter(typed => typed !== ''),
-      distinctUntilChanged()
-    );
-    obs.subscribe(value => this.emitYoutubeSearch(value));
-  }
- */
   emitYoutubeSearch(value) {
     this.apiSearchObservable(value).subscribe(result => this.search$.next(result));
   }

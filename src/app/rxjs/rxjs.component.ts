@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { YoutubeItem } from './youtube-search';
 import { YoutubeSearchService } from '@app/services/youtube-search.service';
+
 @Component({
   selector: 'app-rxjs',
   templateUrl: './rxjs.component.html',
@@ -8,13 +9,15 @@ import { YoutubeSearchService } from '@app/services/youtube-search.service';
 })
 export class RxjsComponent implements OnInit {
 
-  constructor(private youtube: YoutubeSearchService) { }
+  private changes: MutationObserver;
+  constructor(private youtube: YoutubeSearchService) {
+  }
   searchItems: YoutubeItem[];
 
   ngOnInit() {
     this.youtube.searchResults()
-    .subscribe(result => {
-      this.searchItems = result.items.filter(item => item.id.kind === "youtube#video");
-    });
+      .subscribe(result => {
+        this.searchItems = result.items.filter(item => item.id.kind === "youtube#video");
+      });
   }
 }

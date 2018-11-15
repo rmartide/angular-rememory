@@ -12,6 +12,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { BackButtonComponent } from './back-button/back-button.component';
 import { HideonrouteDirective } from './directives/hideonroute.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchItemComponent } from './rxjs/search-item/search-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     BoxesContainerComponent,
     RxjsComponent,
     BackButtonComponent,
-    HideonrouteDirective
+    HideonrouteDirective,
+    SearchItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,3 @@
-<div class="container-fluid">
-    <div class="search-container">
-        <div *ngFor="let searchItem of searchItems" class="search-item">
-            <img class="search-item__thumbnail" [src]="searchItem.snippet.thumbnails.medium.url">
-            <span class="search-item__title">{{ searchItem.snippet.title }}</span>
-        </div>
-    </div>
+<div class="search-container container-fluid">
+    <app-search-item *ngFor="let searchItem of searchItems" [searchItem]="searchItem"></app-search-item>
 </div>
