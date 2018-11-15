@@ -1,0 +1,21 @@
+.search-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem;
+    flex: 1 0 30%;
+    &__title {
+        width: 320px;
+        align-self: center;
+    }
+
+    &__thumbnail {
+        align-self: center;
+    }
+}
+
+.search-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

@@ -1,7 +1,9 @@
 <div class="container-fluid">
     <input type="text" placeholder="write to search" (keyup)="handleChange($event)">
-    <div *ngFor="let searchItem of searchItems">
-        <img [src]="searchItem.snippet.thumbnails.high.url">
-        {{ searchItem.snippet.title }}
+    <div class="search-container">
+        <div *ngFor="let searchItem of searchItems" class="search-item">
+            <img class="search-item__thumbnail" [src]="searchItem.snippet.thumbnails.medium.url">
+            <span class="search-item__title">{{ searchItem.snippet.title }}</span>
+        </div>
     </div>
 </div>

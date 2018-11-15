@@ -44,7 +44,7 @@ export class RxjsComponent implements OnInit {
         }
       }
     ).subscribe(result => {
-      this.searchItems = result.items;
+      this.searchItems = result.items.filter(item => item.id.kind === "youtube#video");
     });
   }
 }
