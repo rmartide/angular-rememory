@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { YoutubeSearchService } from '@app/services/youtube-search.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private youtube: YoutubeSearchService) { }
 
   ngOnInit() {
   }
 
-  login() {
+  handleChange(event: KeyboardEvent) {
+    const target = <HTMLInputElement>event.target;
+    this.youtube.search(target.value);
   }
 
 }
