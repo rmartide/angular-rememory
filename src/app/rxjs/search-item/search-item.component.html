@@ -1,4 +1,4 @@
-<div class="search-item">
+<div class="search-item" (click)="handleClick()">
   <img class="search-item__thumbnail" [src]="searchItem.snippet.thumbnails.medium.url">
   <span class="search-item__title">{{ searchItem.snippet.title }}</span>
 </div>

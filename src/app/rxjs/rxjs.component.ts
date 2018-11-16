@@ -9,7 +9,6 @@ import { YoutubeSearchService } from '@app/services/youtube-search.service';
 })
 export class RxjsComponent implements OnInit {
 
-  private changes: MutationObserver;
   constructor(private youtube: YoutubeSearchService) {
   }
   searchItems: YoutubeItem[];

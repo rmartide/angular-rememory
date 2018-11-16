@@ -20,4 +20,8 @@ export class SearchItemComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     //REMOVE EVENTLISTENER
   }
+
+  handleClick() {
+
+  }
 }
