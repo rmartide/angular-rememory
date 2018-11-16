@@ -10,15 +10,15 @@ import ProxyTech from '@services/proximity-tech.js';
 export class SearchItemComponent implements OnInit, OnDestroy {
 
   @Input() searchItem: YoutubeItem;
-
+  Nearby: any;
   constructor(private elRef: ElementRef) { }
 
   ngOnInit() {
-    ProxyTech.exec(this.elRef.nativeElement);
+    this.Nearby = ProxyTech.exec(this.elRef.nativeElement);
   }
 
   ngOnDestroy(): void {
-    //REMOVE EVENTLISTENER
+    this.Nearby.removeEventListeners();
   }
 
   handleClick() {

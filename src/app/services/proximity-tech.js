@@ -78,6 +78,11 @@ class Nearby {
         window.addEventListener('mousemove', this.mousemoveFn);
         window.addEventListener('scroll', this.scrollFn);
     }
+
+    removeEventListeners() {
+        window.removeEventListener('mousemove', this.mousemoveFn);
+        window.removeEventListener('scroll', this.scrollFn);
+    }
 }
 
 window.Nearby = Nearby;
@@ -111,7 +116,7 @@ const exec = (elRef) => {
 
     const img = elRef.querySelector('img');
     const h2 = elRef.querySelector('span');
-    new Nearby(img, {
+    const instance = new Nearby(img, {
         onProgress: distance => {
             const o = lineEq(opacityInterval.from, opacityInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
             const br = lineEq(borderRadiusInterval.from, borderRadiusInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
@@ -127,6 +132,7 @@ const exec = (elRef) => {
             }); */
         }
     });
+    return instance;
 }
 
 export default {
