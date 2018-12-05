@@ -29,7 +29,7 @@ export class YoutubeSearchService {
   search(value): void {
     this.input$.next(value);
   }
-  
+
   emitYoutubeSearch(value) {
     this.apiSearchObservable(value).subscribe(result => this.search$.next(result));
   }

@@ -13,6 +13,8 @@ import { BackButtonComponent } from './back-button/back-button.component';
 import { HideonrouteDirective } from './directives/hideonroute.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchItemComponent } from './rxjs/search-item/search-item.component';
+import { FormsComponent } from './forms/forms.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,15 @@ import { SearchItemComponent } from './rxjs/search-item/search-item.component';
     RxjsComponent,
     BackButtonComponent,
     HideonrouteDirective,
-    SearchItemComponent
+    SearchItemComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

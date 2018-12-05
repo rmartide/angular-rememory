@@ -99,7 +99,7 @@ const lineEq = (y2, y1, x2, x1, currentVal) => {
 const exec = (elRef) => {
     const distanceThreshold = {
         min: 0,
-        max: 150
+        max: 100
     };
     const opacityInterval = {
         from: .5,
@@ -121,7 +121,7 @@ const exec = (elRef) => {
             const o = lineEq(opacityInterval.from, opacityInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
             const br = lineEq(borderRadiusInterval.from, borderRadiusInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
             const t = lineEq(translateInterval.from, translateInterval.to, distanceThreshold.max, distanceThreshold.min, distance);
-            TweenMax.to(img, 1, {
+            TweenMax.to(img, 0.5, {
                 ease: Power2.easeOut,
                 borderRadius: Math.max(Math.min(br, borderRadiusInterval.from), 0),
                 opacity: Math.max(Math.min(o, opacityInterval.to), .5)

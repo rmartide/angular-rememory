@@ -16,7 +16,7 @@ export class RxjsComponent implements OnInit {
   ngOnInit() {
     this.youtube.searchResults()
       .subscribe(result => {
-        this.searchItems = result.items.filter(item => item.id.kind === "youtube#video");
+        this.searchItems = result.items.filter(item => item.id.kind === 'youtube#video');
       });
   }
 }
