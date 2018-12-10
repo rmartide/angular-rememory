@@ -1,3 +1,12 @@
-<p>
-  events works!
-</p>
+<div class="container-fluid">
+  <h3 class="text-center">Parent</h3>
+  <ul class="d-flex align-items-center flex-column">
+    <li *ngFor="let msg of log">
+      {{msg}}
+    </li>
+  </ul>
+  <div class="d-flex justify-content-around">
+    <app-child1 (event)="handleChildrenClick($event)"></app-child1>
+    <app-child2 (event)="handleChildrenClick($event)"></app-child2>
+  </div>
+</div>

@@ -9,7 +9,14 @@ export class EventsComponent implements OnInit {
 
   constructor() { }
 
+  log: String[];
+
   ngOnInit() {
+    this.log = new Array<String>();
+  }
+
+  handleChildrenClick(msg) {
+    this.log.push(msg);
   }
 
 }
