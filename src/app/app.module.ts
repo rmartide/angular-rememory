@@ -15,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchItemComponent } from './rxjs/search-item/search-item.component';
 import { FormsComponent } from './forms/forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EventsComponent } from './events/events.component';
+import { Child1Component } from './events/child1/child1.component';
+import { Child2Component } from './events/child2/child2.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BackButtonComponent,
     HideonrouteDirective,
     SearchItemComponent,
-    FormsComponent
+    FormsComponent,
+    EventsComponent,
+    Child1Component,
+    Child2Component
   ],
   imports: [
     BrowserModule,
