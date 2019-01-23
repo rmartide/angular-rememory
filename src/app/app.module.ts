@@ -18,6 +18,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventsComponent } from './events/events.component';
 import { Child1Component } from './events/child1/child1.component';
 import { Child2Component } from './events/child2/child2.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalIframeComponent } from './rxjs/modal-iframe/modal-iframe.component';
+import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
+import { InfinityScrollDirective } from './directives/infinity-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -32,14 +36,22 @@ import { Child2Component } from './events/child2/child2.component';
     FormsComponent,
     EventsComponent,
     Child1Component,
-    Child2Component
+    Child2Component,
+    ModalIframeComponent,
+    InfinityScrollDirective
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    NgBootstrapFormValidationModule.forRoot(),
+    NgBootstrapFormValidationModule
+  ],
+  entryComponents: [
+    ModalIframeComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

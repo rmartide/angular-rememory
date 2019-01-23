@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
   handleChange(event: KeyboardEvent) {
     const target = <HTMLInputElement>event.target;
-    this.youtube.search(target.value);
+    this.youtube.search({ value: target.value, option: 'q' });
   }
 
 }

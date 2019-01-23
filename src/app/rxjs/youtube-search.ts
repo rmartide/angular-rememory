@@ -4,6 +4,8 @@ export interface YoutubeSearch {
     kind: string;
     regionCode: string;
     pageInfo: PageInfo;
+    nextPageToken: string;
+    prevPageToken: string;
 }
 
 export interface YoutubeItem {
@@ -42,4 +44,9 @@ export interface SnippetThumbnailsQuality {
     url: string;
     width: Number;
     height: Number;
+}
+
+export interface SearchInput {
+    value: string;
+    option: string;
 }
