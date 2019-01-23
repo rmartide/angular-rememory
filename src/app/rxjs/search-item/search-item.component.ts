@@ -12,6 +12,7 @@ import { ModalIframeComponent } from '../modal-iframe/modal-iframe.component';
 export class SearchItemComponent implements OnInit, OnDestroy {
 
   @Input() searchItem: YoutubeItem;
+  @Input() index: Number;
   Nearby: any;
   constructor(private elRef: ElementRef, private modalService: NgbModal) { }
 
@@ -30,4 +31,6 @@ export class SearchItemComponent implements OnInit, OnDestroy {
     });
     modalRef.componentInstance.id = this.searchItem.id.videoId;
   }
+
+
 }
