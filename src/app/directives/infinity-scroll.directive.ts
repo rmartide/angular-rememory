@@ -13,7 +13,7 @@ export class InfinityScrollDirective {
   constructor(private el: ElementRef) {
   }
     @HostListener('document:scroll', ['$event'])
-    handleScroll($event: Event) {
+    handleScroll($event: any) {
       const scrollOffset = $event.srcElement.children[0].scrollTop;
       const visibleHeight = $event.srcElement.children[0].clientHeight;
       const scrollHeight = $event.srcElement.children[0].scrollHeight;
