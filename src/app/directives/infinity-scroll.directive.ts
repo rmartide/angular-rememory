@@ -19,10 +19,10 @@ export class InfinityScrollDirective {
       const scrollHeight = $event.srcElement.children[0].scrollHeight;
       const height = scrollHeight - visibleHeight;
       const rowHeight = height / (this.length / 3);
-      const numberVisibleRows = Math.round(visibleHeight / rowHeight);
-      const visibleRowHeight = visibleHeight / (this.length / 3);
-      const numberVisibleRowKak = Math.round(visibleHeight / visibleRowHeight);
-      console.log(visibleRowHeight, numberVisibleRowKak, visibleHeight);
+      // const numberVisibleRows = Math.round(visibleHeight / rowHeight);
+      // const visibleRowHeight = visibleHeight / (this.length / 3);
+      // const numberVisibleRowKak = Math.round(visibleHeight / visibleRowHeight);
+      // console.log(visibleRowHeight, numberVisibleRowKak, visibleHeight);
       // console.log(numberVisibleRows, scrollHeight, scrollOffset / rowHeight);
       if (height - scrollOffset <= rowHeight * 2) {
         this.callback.emit();
