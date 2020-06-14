@@ -1,9 +1,12 @@
+import { State } from './../store/state';
+import {search} from '@app/store/actions';
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { debounceTime, filter, distinctUntilChanged } from 'rxjs/operators';
 import { YoutubeSearch, SearchInput } from '@app/rxjs/youtube-search';
 import { HttpClient } from '@angular/common/http';
 import * as JSON from '@assets/keys.json';
+import { Store } from '@ngrx/store';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +22,11 @@ export class YoutubeSearchService {
     maxResults: '12',
     type: 'video'
   };
-  constructor(private http: HttpClient) {
-    this.inputObservable().subscribe(searchInput => this.emitYoutubeSearch(searchInput));
+  constructor(private http: HttpClient, private store: Store<{youtubeSearch: State}>) {
+    this.inputObservable().subscribe(searchInput => {
+      this.emitYoutubeSearch(searchInput)    
+      this.store.dispatch(search());
+    });
   }
 
   private inputObservable(): Observable<SearchInput> {
