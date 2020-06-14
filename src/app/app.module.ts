@@ -1,3 +1,4 @@
+import { YoutubeSearchEffects } from './store/effects';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -22,6 +23,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalIframeComponent } from './rxjs/modal-iframe/modal-iframe.component';
 import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
 import { InfinityScrollDirective } from './directives/infinity-scroll.directive';
+import { NgrxComponent } from './ngrx/ngrx.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/reducer';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,8 @@ import { InfinityScrollDirective } from './directives/infinity-scroll.directive'
     Child1Component,
     Child2Component,
     ModalIframeComponent,
-    InfinityScrollDirective
+    InfinityScrollDirective,
+    NgrxComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,9 @@ import { InfinityScrollDirective } from './directives/infinity-scroll.directive'
     ReactiveFormsModule,
     NgbModule,
     NgBootstrapFormValidationModule.forRoot(),
-    NgBootstrapFormValidationModule
+    NgBootstrapFormValidationModule,
+    StoreModule.forRoot({ youtubeSearch: reducer}),
+    EffectsModule.forRoot([YoutubeSearchEffects])
   ],
   entryComponents: [
     ModalIframeComponent
