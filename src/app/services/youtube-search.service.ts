@@ -24,7 +24,7 @@ export class YoutubeSearchService {
   };
   constructor(private http: HttpClient, private store: Store<{youtubeSearch: State}>) {
     this.inputObservable().subscribe(searchInput => {
-      this.emitYoutubeSearch(searchInput)    
+      this.emitYoutubeSearch(searchInput);
       this.store.dispatch(search());
     });
   }

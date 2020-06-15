@@ -16,7 +16,6 @@ export class NgrxComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.subscribe(({youtubeSearch}) => {
-      console.log(youtubeSearch)
       this.searchItems = youtubeSearch?.searchItems;
     })
   }
