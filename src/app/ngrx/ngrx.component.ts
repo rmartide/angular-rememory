@@ -2,6 +2,7 @@ import { State } from './../store/state';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { YoutubeItem } from '@app/rxjs/youtube-search';
+import { selectFeatureYoutubeSearch } from '@app/store/selector';
 
 @Component({
   selector: 'app-ngrx',
@@ -15,9 +16,9 @@ export class NgrxComponent implements OnInit {
   constructor(private store: Store<{youtubeSearch: State}>) { }
 
   ngOnInit(): void {
-    this.store.subscribe(({youtubeSearch}) => {
-      this.searchItems = youtubeSearch?.searchItems;
-    })
+    this.store.select(selectFeatureYoutubeSearch).subscribe(state => {
+      this.searchItems = state?.searchItems;
+    });
   }
 
 }
