@@ -1,24 +1,17 @@
 import { State } from './../store/state';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { YoutubeItem } from '@app/rxjs/youtube-search';
 import { selectFeatureYoutubeSearch } from '@app/store/selector';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ngrx',
   templateUrl: './ngrx.component.html',
   styleUrls: ['./ngrx.component.scss']
 })
-export class NgrxComponent implements OnInit {
+export class NgrxComponent {
 
-  searchItems: YoutubeItem[] = [];
+  state: Observable<State> = this.store.select(selectFeatureYoutubeSearch);
 
   constructor(private store: Store<{youtubeSearch: State}>) { }
-
-  ngOnInit(): void {
-    this.store.select(selectFeatureYoutubeSearch).subscribe(state => {
-      this.searchItems = state?.searchItems;
-    });
-  }
-
 }
