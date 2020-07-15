@@ -20,8 +20,6 @@ jobs:
       uses: actions/checkout@v2
       with:
           persist-credentials: false
-    - name: Print $HOME
-      run: cat $HOME
     - name: Install and Build
       run: |
         npm install
