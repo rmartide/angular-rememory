@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "remember-app": {
+    "angular-rememory": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/remember-app",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -39,6 +39,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "baseHref": "/angular-rememory/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -61,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "remember-app:build"
+            "browserTarget": "angular-rememory:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "remember-app:build:production"
+              "browserTarget": "angular-rememory:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "remember-app:build"
+            "browserTarget": "angular-rememory:build"
           }
         },
         "test": {
@@ -106,7 +107,7 @@
         }
       }
     },
-    "remember-app-e2e": {
+    "angular-rememory-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "remember-app:serve"
+            "devServerTarget": "angular-rememory:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "remember-app:serve:production"
+              "devServerTarget": "angular-rememory:serve:production"
             }
           }
         },
@@ -135,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "remember-app"
+  "defaultProject": "angular-rememory"
 }
