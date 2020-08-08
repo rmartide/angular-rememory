@@ -20,7 +20,7 @@ jobs:
       run: |
         npm install
         npm run generate-secret
-        npm run build
+        npm run build-prod
       env: 
         CI_PROJECT_NAME: "angular-rememory"
 
